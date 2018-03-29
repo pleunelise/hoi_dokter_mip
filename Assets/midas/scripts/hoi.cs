@@ -7,7 +7,7 @@ public class hoi : MonoBehaviour {
 	public float X_vel = 200;
 	public float Y_vel = 0;
 	public Rigidbody2D rb;
-
+	public GameObject U_gate;
 
 
 	IEnumerator GoMove(Vector2 MPos, float speed){
@@ -32,12 +32,13 @@ public class hoi : MonoBehaviour {
 		
 
 	void Start () {
-
+		U_gate = GameObject.Find ("upper_gate");
+		transform.position = U_gate.transform.position;
 	}
-
+					
 	void FixedUpdate () {
 		if (Input.GetMouseButton(0)) {
-			MoveTo (new Vector2 (2, 3), 0.5f);
+			MoveTo (new Vector2 (U_gate.transform.position.x, U_gate.transform.position.y -1), 0.5f);
 		} else {
 			MoveTo (new Vector2 (-3, -3), 0.5f);
 		}
