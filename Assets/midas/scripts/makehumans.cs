@@ -12,6 +12,8 @@ public class makehumans : MonoBehaviour {
 
 	public int sec, min;
 
+	public int rand_sign;
+
 
 	public GameObject bg;
 
@@ -20,19 +22,18 @@ public class makehumans : MonoBehaviour {
 	public GameObject U_gate;
 
 
-	// Use this for initialization
 	void Start () {
 
 		bg = GameObject.Find ("bg");
 
 		U_gate = GameObject.Find ("upper_gate");
 
+		rand_sign = Random.Range (1,4);
+		Debug.Log (rand_sign);
+
 
 	}
 
-	public void waitfor (int time) {
-		StartCoroutine(wait(time));
-	}
 
 	IEnumerator wait(int time){
 
@@ -40,7 +41,6 @@ public class makehumans : MonoBehaviour {
 		
 	}
 
-	// Update is called once per frame
 	void Update () {
 
 		minutes = (int)(Time.time / 60f);
@@ -51,12 +51,12 @@ public class makehumans : MonoBehaviour {
 
 		min = min * 60;
 
-		people = (sec + min + 5 % 5);
+		people = (int)(sec + min + 5 / 5);
 
 		for (int i = 1; i <= people; i++) {
 			Instantiate (doctor, U_gate.transform.position, U_gate.transform.rotation);
 		}
 
-		waitfor (5);
+		StartCoroutine(wait(5));
 	}
 }
