@@ -29,7 +29,17 @@ public class makehumans : MonoBehaviour {
 
 
 	}
-	
+
+	public void waitfor (int time) {
+		StartCoroutine(wait(time));
+	}
+
+	IEnumerator wait(int time){
+
+		yield return new WaitForSeconds (time);
+		
+	}
+
 	// Update is called once per frame
 	void Update () {
 
@@ -47,5 +57,6 @@ public class makehumans : MonoBehaviour {
 			Instantiate (doctor, U_gate.transform.position, U_gate.transform.rotation);
 		}
 
+		waitfor (5);
 	}
 }
