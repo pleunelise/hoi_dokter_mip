@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class makehumans : MonoBehaviour {
 
+	public bool first = false;
+
 	public int[] counter;
 
 	public int people;
 
 	public float seconds, minutes;
 
-	public int sec, min;
+	public int sec, min, secSS;
 
 	public int rand_sign;
 
@@ -34,12 +36,13 @@ public class makehumans : MonoBehaviour {
 
 	}
 
-
-	IEnumerator wait(int time){
-
-		yield return new WaitForSeconds (time);
-		
+	public void spawn(int people){
+		for (int i = 1; i <= people; i++) {
+			Instantiate (doctor, U_gate.transform.position, U_gate.transform.rotation);
+		}
 	}
+
+
 
 	void Update () {
 
@@ -49,14 +52,21 @@ public class makehumans : MonoBehaviour {
 		sec = (int)seconds;
 		min = (int)minutes;
 
-		min = min * 60;
+		secSS = min * 60 + sec;
 
-		people = (int)(sec + min + 5 / 5);
 
-		for (int i = 1; i <= people; i++) {
-			Instantiate (doctor, U_gate.transform.position, U_gate.transform.rotation);
+		if (secSS % 5 == 0 && first == false) {
+
+			first = true;
+			people = (int)(secSS + 5 / 5);
+			spawn (people);
+
+
+		} else {
+			
+			first = false;
+
 		}
 
-		StartCoroutine(wait(5));
 	}
 }
