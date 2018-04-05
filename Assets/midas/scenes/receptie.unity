@@ -279,7 +279,6 @@ GameObject:
   - component: {fileID: 269040507}
   - component: {fileID: 269040506}
   - component: {fileID: 269040508}
-  - component: {fileID: 269040509}
   m_Layer: 0
   m_Name: bg
   m_TagString: Untagged
@@ -355,22 +354,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b003667a728c42f4daa4e19a968fe26a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doctor: {fileID: 1080688163377142, guid: d127284d2b9c1bb4986223658543e287, type: 2}
-  U_gate: {fileID: 0}
---- !u!114 &269040509
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 269040505}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 330aa143387512241a20fc05d7d598f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  first: 0
   counter: 
+  people: 0
   seconds: 0
   minutes: 0
+  sec: 0
+  min: 0
+  secSS: 0
+  rand_sign: 0
+  bg: {fileID: 0}
+  doctor: {fileID: 1080688163377142, guid: d127284d2b9c1bb4986223658543e287, type: 2}
+  U_gate: {fileID: 0}
 --- !u!1 &410839271
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,7 +449,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -493,7 +488,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 626795588}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 5, z: 0}
+  m_LocalPosition: {x: 0, y: 5.84, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 984297168}
@@ -508,7 +503,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -522,7 +517,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 19.190435, y: 1}
+  m_Size: {x: 22.03313, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &851682245
 GameObject:
@@ -607,7 +602,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -706,7 +701,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -831,7 +826,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1189260150}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -5, z: 0}
+  m_LocalPosition: {x: 0, y: -5.99, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 984297168}
@@ -846,7 +841,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -860,7 +855,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 19.190517, y: 1}
+  m_Size: {x: 21.259254, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &1192011354
 GameObject:
@@ -993,7 +988,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1261131764}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9, y: 0, z: 0}
+  m_LocalPosition: {x: -10.23, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 984297168}
@@ -1008,10 +1003,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.22163677}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1022,7 +1017,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 10.758068}
+  m_Size: {x: 1, y: 12.481867}
   m_EdgeRadius: 0
 --- !u!1 &1303290407
 GameObject:
@@ -1050,7 +1045,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1179,7 +1174,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1705753430}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9, y: 0, z: 0}
+  m_LocalPosition: {x: 10.03, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 984297168}
@@ -1194,7 +1189,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1208,7 +1203,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 10.890202}
+  m_Size: {x: 1, y: 12.664797}
   m_EdgeRadius: 0
 --- !u!1 &1747031376
 GameObject:
@@ -1409,7 +1404,6 @@ GameObject:
   - component: {fileID: 1914243832}
   - component: {fileID: 1914243831}
   - component: {fileID: 1914243830}
-  - component: {fileID: 1914243829}
   m_Layer: 0
   m_Name: UICamera
   m_TagString: Untagged
@@ -1417,13 +1411,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1914243829
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1914243828}
-  m_Enabled: 1
 --- !u!124 &1914243830
 Behaviour:
   m_ObjectHideFlags: 0

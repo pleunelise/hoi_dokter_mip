@@ -55,15 +55,17 @@ public class makehumans : MonoBehaviour {
 		secSS = min * 60 + sec;
 
 
-		if (secSS % 5 == 0 && first == false) {
+		if (secSS % 5 == 0) {
+			
+			if (first == false) {
+				people = (int)((secSS + 5) / 5);
+				spawn (people);
+			}
 
 			first = true;
-			people = (int)(secSS + 5 / 5);
-			spawn (people);
 
 
 		} else {
-			
 			first = false;
 
 		}

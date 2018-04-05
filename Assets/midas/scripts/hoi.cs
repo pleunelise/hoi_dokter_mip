@@ -4,7 +4,15 @@ using UnityEngine;
 
 public class hoi : MonoBehaviour {
 
+	private float[] noiseValues;
+
+	public GameObject Heart;
+	public GameObject WheelChair;
+	public GameObject StethoScope;
+	public GameObject Bliep;
+
 	public float X_vel = 200;
+	public int randDoctorState; 
 	public float Y_vel = 0;
 	public Rigidbody2D rb;
 	public GameObject U_gate;
@@ -25,6 +33,11 @@ public class hoi : MonoBehaviour {
 		}
 	}
 
+	void OnCollisionEnter (Collision2D coll){
+		return;
+	}
+
+
 
 	public void MoveTo (Vector2 MPos, float speed) {
 		StartCoroutine(GoMove(MPos, speed));
@@ -33,14 +46,24 @@ public class hoi : MonoBehaviour {
 
 	void Start () {
 		U_gate = GameObject.Find ("upper_gate");
-		transform.position = U_gate.transform.position;
+		Heart = GameObject.Find ("heart");
+		Bliep = GameObject.Find ("bliep");
+		StethoScope = GameObject.Find ("stethoscope");
+		WheelChair = GameObject.Find ("wheelchair");
+		transform.position = new Vector2 (U_gate.transform.position.x, U_gate.transform.position.y);
+		randDoctorState = (int)Mathf.Floor(Random.Range(1f, 5));
 	}
 					
 	void FixedUpdate () {
-		if (Input.GetMouseButton(0)) {
-			MoveTo (new Vector2 (U_gate.transform.position.x, U_gate.transform.position.y -1), 0.5f);
+		if (randDoctorState == 1) {
+			MoveTo (Heart.transform.position, 0.5f);
+		} else if (randDoctorState == 2) {
+			MoveTo (Bliep.transform.position, 0.5f);
+		} else if (randDoctorState == 3) {
+			MoveTo (StethoScope.transform.position, 0.5f);
 		} else {
-			MoveTo (new Vector2 (-3, -3), 0.5f);
+			MoveTo (WheelChair.transform.position, 0.5f);
 		}
+
 	}
 }
