@@ -8,8 +8,6 @@ public class hoi : MonoBehaviour {
 
 	public Animator anim;
 
-	public int score = 0;
-	public int wrong = 0;
 	public Text Score_text;
 	public Text Wrong_text;
 	public GameObject scoreText;
@@ -17,6 +15,8 @@ public class hoi : MonoBehaviour {
 
 	public bool dirgiven = false;
 
+	public wrongcounter WrongScr;
+	public scorecounter ScoreScr;
 	public clickonwheelchair ClickOnWheelchair;
 	public clickonstethoscope ClickOnStethoscope;
 	public clickonbliep ClickOnBliep;
@@ -63,18 +63,21 @@ public class hoi : MonoBehaviour {
 
 	void OnCollisionEnter2D (Collision2D coll)
 	{
+		scorecounter ScoreScr = scoreText.GetComponent<scorecounter> ();
+		wrongcounter WrongScr = wrongText.GetComponent<wrongcounter> ();
+
 		if (randDoctorState == 1) 
 		{
 			if (coll.gameObject.tag == "heart") 
 			{
-				score += 1;
-				Score_text.text = "score: " + score.ToString();
+				ScoreScr.score += 1;
+				Score_text.text = "score: " + ScoreScr.score.ToString();
 				Destroy (gameObject);
 
 			} else if (coll.gameObject.tag == "bliep" || coll.gameObject.tag == "stethoscope" || coll.gameObject.tag == "wheelchair")
 			{
-				wrong += 1;
-				Wrong_text.text = "Wrong: " + wrong.ToString ();
+				WrongScr.wrong += 1;
+				Wrong_text.text = "Wrong: " + WrongScr.wrong.ToString ();
 				Destroy (gameObject);
 
 			}
@@ -82,14 +85,14 @@ public class hoi : MonoBehaviour {
 		{
 			if (coll.gameObject.tag == "bliep") 
 			{
-				score += 1;
-				Score_text.text = "score: " + score.ToString();
+				ScoreScr.score += 1;
+				Score_text.text = "score: " + ScoreScr.score.ToString();
 				Destroy (gameObject);
 
 			} else if (coll.gameObject.tag == "heart" || coll.gameObject.tag == "stethoscope" || coll.gameObject.tag == "wheelchair")
 			{
-				wrong += 1;
-				Wrong_text.text = "Wrong: " + wrong.ToString ();
+				WrongScr.wrong += 1;
+				Wrong_text.text = "Wrong: " + WrongScr.wrong.ToString ();
 				Destroy (gameObject);
 
 			}
@@ -97,14 +100,14 @@ public class hoi : MonoBehaviour {
 		{
 			if (coll.gameObject.tag == "stethoscope") 
 			{
-				score += 1;
-				Score_text.text = "score: " + score.ToString();
+				ScoreScr.score += 1;
+				Score_text.text = "score: " + ScoreScr.score.ToString();
 				Destroy (gameObject);
 
 			} else if (coll.gameObject.tag == "bliep" || coll.gameObject.tag == "heart" || coll.gameObject.tag == "wheelchair")
 			{
-				wrong += 1;
-				Wrong_text.text = "Wrong: " + wrong.ToString ();
+				WrongScr.wrong += 1;
+				Wrong_text.text = "Wrong: " + WrongScr.wrong.ToString ();
 				Destroy (gameObject);
 
 			}
@@ -112,14 +115,14 @@ public class hoi : MonoBehaviour {
 		{
 			if (coll.gameObject.tag == "wheelchair") 
 			{
-				score += 1;
-				Score_text.text = "score: " + score.ToString();
+				ScoreScr.score += 1;
+				Score_text.text = "score: " + ScoreScr.score.ToString();
 				Destroy (gameObject);
 
 			} else if (coll.gameObject.tag == "bliep" || coll.gameObject.tag == "stethoscope" || coll.gameObject.tag == "heart")
 			{
-				wrong += 1;
-				Wrong_text.text = "Wrong: " + wrong.ToString ();
+				WrongScr.wrong += 1;
+				Wrong_text.text = "Wrong: " + WrongScr.wrong.ToString ();
 				Destroy (gameObject);
 
 			}
@@ -161,6 +164,8 @@ public class hoi : MonoBehaviour {
 		clickonbliep ClickOnBliep = Bliep.GetComponent<clickonbliep> ();
 		clickonstethoscope ClickOnStethoscope = StethoScope.GetComponent<clickonstethoscope> ();
 		clickonwheelchair ClickOnWheelchair = WheelChair.GetComponent<clickonwheelchair> ();
+		scorecounter ScoreScr = scoreText.GetComponent<scorecounter> ();
+		wrongcounter WrongScr = wrongText.GetComponent<wrongcounter> ();
 
 		// gives a random nummber to doctor
 		randDoctorState = (int)Mathf.Floor(Random.Range(1f, 5));
@@ -193,6 +198,8 @@ public class hoi : MonoBehaviour {
 		clickonbliep ClickOnBliep = Bliep.GetComponent<clickonbliep> ();
 		clickonstethoscope ClickOnStethoscope = StethoScope.GetComponent<clickonstethoscope> ();
 		clickonwheelchair ClickOnWheelchair = WheelChair.GetComponent<clickonwheelchair> ();
+		scorecounter ScoreScr = scoreText.GetComponent<scorecounter> ();
+		wrongcounter WrongScr = wrongText.GetComponent<wrongcounter> ();
 
 		if (dirgiven == false)
 		{
@@ -239,11 +246,7 @@ public class hoi : MonoBehaviour {
 			}
 		}
 
-
-		if (wrong > 3) {
-			return;
-		}
-			
+					
 	}
 
 	void FixedUpdate ()

@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class scorecounter : MonoBehaviour {
+public class wrongcounter : MonoBehaviour {
 
-	public int score = 0;
+	public int wrong = 0;
+
 }
