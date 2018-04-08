@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114447108647863768}
   - component: {fileID: 50134863407404544}
   - component: {fileID: 61431413582542264}
+  - component: {fileID: 95697866428016002}
   m_Layer: 0
   m_Name: Anesthesist
   m_TagString: Untagged
@@ -88,6 +89,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7.72, y: 10.82}
   m_EdgeRadius: 0
+--- !u!95 &95697866428016002
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1080688163377142}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8bd56a0d56384f44c819b00e6b4079d8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114447108647863768
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -99,15 +117,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f816d3e29fd87fa489fab1385f1b417b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  score: 0
+  wrong: 0
+  Score_text: {fileID: 0}
+  Wrong_text: {fileID: 0}
+  scoreText: {fileID: 0}
+  wrongText: {fileID: 0}
+  dirgiven: 0
+  ClickOnWheelchair: {fileID: 0}
+  ClickOnStethoscope: {fileID: 0}
+  ClickOnBliep: {fileID: 0}
+  ClickOnHeart: {fileID: 0}
+  mouse_over: 0
+  move: 0
   Heart: {fileID: 0}
   WheelChair: {fileID: 0}
   StethoScope: {fileID: 0}
   Bliep: {fileID: 0}
-  X_vel: 200
   randDoctorState: 0
-  Y_vel: 0
   rb: {fileID: 0}
-  U_gate: {fileID: 0}
 --- !u!212 &212002101204248928
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class hoi : MonoBehaviour {
 
+	public Animator anim;
+
 	public int score = 0;
 	public int wrong = 0;
 	public Text Score_text;
@@ -141,13 +143,10 @@ public class hoi : MonoBehaviour {
 		StartCoroutine(GoMove(MPos, speed));
 	}
 
-	IEnumerator waitoneframe(){
-		yield return 0;
-	}
+
 
 	void Start ()
 	{
-		StartCoroutine (waitoneframe());
 
 		// gets all game objects
 		scoreText = GameObject.Find("ScoreText");
@@ -166,8 +165,24 @@ public class hoi : MonoBehaviour {
 		// gives a random nummber to doctor
 		randDoctorState = (int)Mathf.Floor(Random.Range(1f, 5));
 
+		// get components
 		Score_text = scoreText.GetComponent<Text> () as Text;
 		Wrong_text = wrongText.GetComponent<Text> () as Text;
+		anim = GetComponent<Animator>();
+
+		if (randDoctorState == 1) 
+		{
+			anim.SetBool ("heart_anim", true);
+		} else if (randDoctorState == 2)
+		{
+			anim.SetBool ("bliep_anim", true);
+		} else if (randDoctorState == 3)
+		{
+			anim.SetBool ("stethoscope_anim", true);
+		} else if (randDoctorState == 4)
+		{
+			anim.SetBool ("wheelchair_anim", true);
+		}
 
 	}
 
