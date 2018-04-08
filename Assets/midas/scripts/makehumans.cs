@@ -21,14 +21,11 @@ public class makehumans : MonoBehaviour {
 
 	public GameObject doctor;
 
-	public GameObject U_gate;
-
 
 	void Start () {
 
 		bg = GameObject.Find ("bg");
 
-		U_gate = GameObject.Find ("upper_gate");
 
 		rand_sign = Random.Range (1,4);
 		Debug.Log (rand_sign);
@@ -38,7 +35,7 @@ public class makehumans : MonoBehaviour {
 
 	public void spawn(int people){
 		for (int i = 1; i <= people; i++) {
-			Instantiate (doctor, U_gate.transform.position, U_gate.transform.rotation);
+			Instantiate (doctor, new Vector3 (0f, 4f, -0.3f), transform.rotation);
 		}
 	}
 
@@ -52,13 +49,13 @@ public class makehumans : MonoBehaviour {
 		sec = (int)seconds;
 		min = (int)minutes;
 
-		secSS = min * 60 + sec;
+		secSS =(int)min * 60 + sec;
 
 
-		if (secSS % 5 == 0) {
+		if (secSS % 10 == 0) {
 			
 			if (first == false) {
-				people = (int)((secSS + 5) / 5);
+				people = (int)((secSS + 10) / 10);
 				spawn (people);
 			}
 

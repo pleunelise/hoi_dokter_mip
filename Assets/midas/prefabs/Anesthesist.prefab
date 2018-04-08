@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1080688163377142}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.1}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -99,7 +99,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f816d3e29fd87fa489fab1385f1b417b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Heart: {fileID: 0}
+  WheelChair: {fileID: 0}
+  StethoScope: {fileID: 0}
+  Bliep: {fileID: 0}
   X_vel: 200
+  randDoctorState: 0
   Y_vel: 0
   rb: {fileID: 0}
   U_gate: {fileID: 0}
