@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor.SceneManagement;
 using UnityEngine.UI;
 
 public class hoi : MonoBehaviour {
@@ -158,14 +157,6 @@ public class hoi : MonoBehaviour {
 		Bliep = GameObject.Find ("bliep");
 		StethoScope = GameObject.Find ("stethoscope");
 		WheelChair = GameObject.Find ("wheelchair");
-
-		// get gamobjects scripts
-		clickonheart ClickOnHeart = Heart.GetComponent<clickonheart> ();
-		clickonbliep ClickOnBliep = Bliep.GetComponent<clickonbliep> ();
-		clickonstethoscope ClickOnStethoscope = StethoScope.GetComponent<clickonstethoscope> ();
-		clickonwheelchair ClickOnWheelchair = WheelChair.GetComponent<clickonwheelchair> ();
-		scorecounter ScoreScr = scoreText.GetComponent<scorecounter> ();
-		wrongcounter WrongScr = wrongText.GetComponent<wrongcounter> ();
 
 		// gives a random nummber to doctor
 		randDoctorState = (int)Mathf.Floor(Random.Range(1f, 5));
