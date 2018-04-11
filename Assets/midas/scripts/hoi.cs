@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class hoi : MonoBehaviour {
@@ -180,6 +181,8 @@ public class hoi : MonoBehaviour {
 			anim.SetBool ("wheelchair_anim", true);
 		}
 
+
+
 	}
 
 
@@ -225,6 +228,10 @@ public class hoi : MonoBehaviour {
 
 					}
 				}
+			}
+
+			if (WrongScr.wrong > 7) {
+				SceneManager.LoadScene ("menu");
 			}
 		}
 
