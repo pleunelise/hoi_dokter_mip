@@ -27,8 +27,8 @@ public class klik : MonoBehaviour {
 			switch (hit.transform.name) {
 			case "Bureaustoel":
 				animator.Play ("gevstoel");
-				break;
 				Destroy(GameObject.Find("gevBureaustoel"));
+				break;
 			case "Prikbord-2":
 				animator.Play ("gevPrikbord");
 				Destroy(GameObject.Find("gevPrikbord-2"));
