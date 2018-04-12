@@ -15,9 +15,6 @@ public class klik : MonoBehaviour {
 		if (Input.GetMouseButtonDown (0)) {
 			Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint (Input.mousePosition);
 			RaycastHit2D hit = Physics2D.Raycast (mouseWorldPos, Vector2.zero);
-			if (hit == null) {
-				return;
-			}
 			if (hit.transform == null) {
 				return;
 			}

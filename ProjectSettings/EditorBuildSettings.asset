@@ -14,3 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/midas/menu/secens/select.unity
     guid: 2da7f941f017eef4aad0d8e7543fa95d
+  - enabled: 1
+    path: Assets/pleun/scenes/spel.unity
+    guid: aaedc8a58b42e6549a8c0cbd75b30927
+  - enabled: 1
+    path: Assets/Israh/Israh.unity
+    guid: 73a3ae1f0417b744d9c375bba9e46339

@@ -26,7 +26,7 @@ public class clickonzoek : MonoBehaviour {
 	void Update () {
 		if (mouseoverzoek == true) {
 			if (Input.GetMouseButtonDown (0)) {
-				SceneManager.LoadScene ("menu");
+				SceneManager.LoadScene ("Israh");
 			}
 		}
 
