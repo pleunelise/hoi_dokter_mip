@@ -26,7 +26,7 @@ public class clickonhelp : MonoBehaviour {
 	void Update () {
 		if (mouseoverhelp == true) {
 			if (Input.GetMouseButtonDown (0)) {
-				SceneManager.LoadScene ("menu");
+				SceneManager.LoadScene ("spel");
 			}
 		}
 	}
