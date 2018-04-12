@@ -27,22 +27,27 @@ public class klik : MonoBehaviour {
 			switch (hit.transform.name) {
 			case "Bureaustoel":
 				animator.Play ("gevstoel");
-				Destroy("Bureaustoel");
 				break;
+				Destroy(GameObject.Find("gevBureaustoel"));
 			case "Prikbord-2":
 				animator.Play ("gevPrikbord");
+				Destroy(GameObject.Find("gevPrikbord-2"));
 				break;	
 			case "Plant":
 				animator.Play ("gevPlent");
+				Destroy(GameObject.Find("gevPlant"));
 				break;
 			case "Ladekast":
 				animator.Play ("gevKast");
+				Destroy(GameObject.Find("gevLadekast"));
 				break;
 			case "Receptiebordje":
 				animator.Play ("gevBordje");
+				Destroy(GameObject.Find("gevReceptiebordje"));
 				break;
 			case "Computer":
 				animator.Play ("gevondenAnimatie");
+				Destroy(GameObject.Find("gevComputer"));
 				break;
 			}
 		}
