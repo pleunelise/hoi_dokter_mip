@@ -4,10 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - heart
-  - bliep
-  - stethoscope
-  - wheelchair
+  - bureaustoel
   layers:
   - Default
   - TransparentFX
@@ -44,4 +41,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 3800163079
+    locked: 0
+  - name: Items
+    uniqueID: 1680589323
+    locked: 0
+  - name: GevItems
+    uniqueID: 283323781
     locked: 0
